@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zegar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="clock">
+     <div id="hours">00</div>
+     <div id="minutes">00</div>
+     <div id="seconds">00</div>
+     <div id="miliseconds">000</div>
+    </div>
+    <div id="results">00</div>
+    
+
+
+
+<script>
+    function updateClock(){
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var miliseconds = now.getMilliseconds();
+
+        
+
+        hours = (hours < 10) ? "0" + hours : hours;
+        if(minutes < 10){
+            minutes = "0" + minutes
+        } else{
+           minutes = minutes
+        }
+        miliseconds = (miliseconds < 10) ? "0" + miliseconds : miliseconds;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+        document.getElementById("hours").textContent = hours + ":";
+        document.getElementById("minutes").textContent = minutes + ":";
+        document.getElementById("seconds").textContent = seconds + ":";
+        document.getElementById("miliseconds").textContent = miliseconds;
+        if(seconds >= 50){
+            document.getElementById("seconds").style.color = "white";
+        }
+         if(seconds <= 10){
+            document.getElementById("seconds").style.color = "red";
+         }
+         else if(seconds <= 20){
+            document.getElementById("seconds").style.color = "blue";
+         }
+         else if(seconds <= 30){
+            document.getElementById("seconds").style.color = "green";
+         }
+         else if(seconds <= 40){
+            document.getElementById("seconds").style.color = "pink";
+         }
+         else if(seconds <= 50){
+            document.getElementById("seconds").style.color = "purple";
+         }
+         hours = parseInt(hours)
+         minutes = parseInt(minutes)
+         seconds = parseInt(seconds)
+         document.getElementById("results").innerText = hours + minutes + seconds;
+        
+        }
+    setInterval(updateClock, 1);
+    updateClock();
+
+</script>
+
+
+</body>
+</html>

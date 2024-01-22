@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prentem</title>
+    <link rel="stylesheet" href="styleprentem.css">
+</head>
+<body>
+    <div class="prentem"><p>A:</p><input type="number" id="a"> <p>B:</p><input type="number" id="b"></div>
+    <div id="kalkulator"><p>SkrzyniaOh</p><input type="radio" name="SkrzynkaOh" id="dodawanie">Dodawanie<input type="radio"name="SkrzynkaOh" id="odejmowanie">Odejmowanie<input type="radio"name="SkrzynkaOh" id="mnożenie">Mnożenie<input type="radio"name="SkrzynkaOh"id="dzielenie">Dzielenie<p>SkrzyniaOh</p>   
+    <div id="results">Wynik:</div></div>
+    <div id="ja"></div>
+    <button onclick="kalkulator()">Jynxzi</button>
+</body>
+<script>
+    function kalkulator(){
+        var sum
+        var a = document.getElementById("a").value
+        var b = document.getElementById("b").value
+        var dodawanie = document.getElementById("dodawanie")
+
+if(dodawanie.checked){
+    a = parseInt(a)
+    b = parseInt(b)
+    sum = a + b;
+    console.log(sum);
+}
+    var sum
+        var a = document.getElementById("a").value
+        var b = document.getElementById("b").value
+        var odejmowanie = document.getElementById("odejmowanie")
+        if(odejmowanie.checked){
+    a = parseInt(a)
+    b = parseInt(b)
+    sum = a - b;
+    console.log(sum);
+        }
+    var sum
+        var a = document.getElementById("a").value
+        var b = document.getElementById("b").value
+        var mnożenie = document.getElementById("mnożenie")
+        if(mnożenie.checked){
+    a = parseInt(a)
+    b = parseInt(b)
+    sum = a * b;
+    console.log(sum);
+        }
+    var sum
+        var a = document.getElementById("a").value
+        var b = document.getElementById("b").value
+        var dzielenie = document.getElementById("dzielenie")
+        if(dzielenie.checked){
+    a = parseInt(a)
+    b = parseInt(b)
+    sum = a / b;
+    console.log(sum);
+        }if(b != 0){
+            a = parseInt(a)
+            b = parseInt(b)
+            sum = a / b;
+            console.log(sum);
+        }
+        else{
+            document.getElementById("results").innerText = "nie dziel przez 0";
+        }
+        if(sum>100 && sum<200 && sum %2 == 0 && sum %3 == 0 && sum %5 == 0){
+            alert("wygrales");
+        }
+        if(a % 2 == 0){
+        document.getElementById("ja").innerText = "A liczba jest parzysta";
+        document.getElementById("ja").style.color = "green";
+        }
+        else{
+            document.getElementById("ja").innerText = "A liczba jest nieparzysta";
+            document.getElementById("ja").style.color = "red";
+        }
+        
+    }
+</script>
+</html>             

@@ -1,0 +1,11 @@
+.prentem{
+    display: flex;
+    padding: 25px;
+}
+.prentem p{
+    padding-left: 25px;
+    padding-right: 5px;
+}
+html{
+    background-color: color-mix(in srgb, blue 40%, green 60%);
+}
